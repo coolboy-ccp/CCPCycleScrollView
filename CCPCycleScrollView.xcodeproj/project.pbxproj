@@ -12,6 +12,9 @@
 		00EBBED621A650700005BFE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00EBBED421A650700005BFE6 /* Main.storyboard */; };
 		00EBBED821A650710005BFE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00EBBED721A650710005BFE6 /* Assets.xcassets */; };
 		00EBBEDB21A650710005BFE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00EBBED921A650710005BFE6 /* LaunchScreen.storyboard */; };
+		00EBBEE821A65C950005BFE6 /* NormalCycleViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EBBEE721A65C950005BFE6 /* NormalCycleViewCells.swift */; };
+		00EBBEEA21A67D6F0005BFE6 /* CycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EBBEE921A67D6F0005BFE6 /* CycleScrollView.swift */; };
+		22FDAF565D1F8AF67BADA46E /* Pods_CCPCycleScrollView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41CA16BFEEFEA756E91D35E /* Pods_CCPCycleScrollView.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,11 @@
 		00EBBED721A650710005BFE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00EBBEDA21A650710005BFE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00EBBEDC21A650710005BFE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00EBBEE721A65C950005BFE6 /* NormalCycleViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalCycleViewCells.swift; sourceTree = "<group>"; };
+		00EBBEE921A67D6F0005BFE6 /* CycleScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleScrollView.swift; sourceTree = "<group>"; };
+		BF858BB5F983D11650528E6D /* Pods-CCPCycleScrollView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCPCycleScrollView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCPCycleScrollView/Pods-CCPCycleScrollView.debug.xcconfig"; sourceTree = "<group>"; };
+		E41CA16BFEEFEA756E91D35E /* Pods_CCPCycleScrollView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCPCycleScrollView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF7727BB32E1ABCE0E51BF3D /* Pods-CCPCycleScrollView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCPCycleScrollView.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCPCycleScrollView/Pods-CCPCycleScrollView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22FDAF565D1F8AF67BADA46E /* Pods_CCPCycleScrollView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,8 @@
 			children = (
 				00EBBECF21A650700005BFE6 /* CCPCycleScrollView */,
 				00EBBECE21A650700005BFE6 /* Products */,
+				4CEA0A7746D4D02954CAFD08 /* Pods */,
+				F89448D168CFA547CE43FE52 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +65,7 @@
 		00EBBECF21A650700005BFE6 /* CCPCycleScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				00EBBEE221A650800005BFE6 /* CycleSCroll */,
 				00EBBED021A650700005BFE6 /* AppDelegate.swift */,
 				00EBBED221A650700005BFE6 /* ViewController.swift */,
 				00EBBED421A650700005BFE6 /* Main.storyboard */,
@@ -64,6 +76,32 @@
 			path = CCPCycleScrollView;
 			sourceTree = "<group>";
 		};
+		00EBBEE221A650800005BFE6 /* CycleSCroll */ = {
+			isa = PBXGroup;
+			children = (
+				00EBBEE921A67D6F0005BFE6 /* CycleScrollView.swift */,
+				00EBBEE721A65C950005BFE6 /* NormalCycleViewCells.swift */,
+			);
+			path = CycleSCroll;
+			sourceTree = "<group>";
+		};
+		4CEA0A7746D4D02954CAFD08 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BF858BB5F983D11650528E6D /* Pods-CCPCycleScrollView.debug.xcconfig */,
+				FF7727BB32E1ABCE0E51BF3D /* Pods-CCPCycleScrollView.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F89448D168CFA547CE43FE52 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E41CA16BFEEFEA756E91D35E /* Pods_CCPCycleScrollView.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +109,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00EBBEDF21A650710005BFE6 /* Build configuration list for PBXNativeTarget "CCPCycleScrollView" */;
 			buildPhases = (
+				5F1D6FEB558D3B292556003E /* [CP] Check Pods Manifest.lock */,
 				00EBBEC921A650700005BFE6 /* Sources */,
 				00EBBECA21A650700005BFE6 /* Frameworks */,
 				00EBBECB21A650700005BFE6 /* Resources */,
+				C5693CB86845505B34CA83EE /* [CP] Embed Pods Frameworks */,
+				204F7B92748E81E04999B012 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,11 +171,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		204F7B92748E81E04999B012 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCPCycleScrollView/Pods-CCPCycleScrollView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F1D6FEB558D3B292556003E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CCPCycleScrollView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5693CB86845505B34CA83EE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CCPCycleScrollView/Pods-CCPCycleScrollView-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCPCycleScrollView/Pods-CCPCycleScrollView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		00EBBEC921A650700005BFE6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00EBBEE821A65C950005BFE6 /* NormalCycleViewCells.swift in Sources */,
+				00EBBEEA21A67D6F0005BFE6 /* CycleScrollView.swift in Sources */,
 				00EBBED321A650700005BFE6 /* ViewController.swift in Sources */,
 				00EBBED121A650700005BFE6 /* AppDelegate.swift in Sources */,
 			);
@@ -280,6 +379,7 @@
 		};
 		00EBBEE021A650710005BFE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF858BB5F983D11650528E6D /* Pods-CCPCycleScrollView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +398,7 @@
 		};
 		00EBBEE121A650710005BFE6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF7727BB32E1ABCE0E51BF3D /* Pods-CCPCycleScrollView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

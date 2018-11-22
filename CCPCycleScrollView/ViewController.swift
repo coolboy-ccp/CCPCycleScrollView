@@ -9,10 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var cycleViewBg: UIView!
+    private let scrView = CycleScrollView.imageScroll()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        setScrollView()
+    }
+    
+    private func setScrollView() {
+        cycleViewBg.addSubview(scrView)
+        scrView.frame = cycleViewBg.bounds
+//       / scrView.snp.makeConstraints { $0.top.bottom.left.right.equalTo(cycleViewBg) }
+        let imgNames = ["img1", "img2", "img3"]
+        scrView.scroll(contents: imgNames)
     }
 
 
