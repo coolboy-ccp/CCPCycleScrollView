@@ -16,7 +16,7 @@ import Kingfisher
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(imgV)
-        imgV.contentMode = .scaleAspectFit
+        imgV.contentMode = .center
         contentView.backgroundColor = UIColor.white
         imgV.snp.makeConstraints { (make) in
             make.top.bottom.left.right.equalTo(self)
@@ -59,6 +59,36 @@ import Kingfisher
     
     private func imageContent(_ content: UIImage) {
         imgV.image = content
+    }
+    
+}
+
+
+final class TextCell: UICollectionViewCell {
+    private let textLabel = UILabel()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setupTextLabel()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    private func setupTextLabel() {
+        textLabel.font = UIFont.systemFont(ofSize: 18)
+        textLabel.textAlignment = .center
+        textLabel.textColor = .orange
+        self.addSubview(textLabel)
+        textLabel.snp.makeConstraints { $0.top.left.bottom.right.equalTo(0) }
+    }
+    
+    override func setContent(_ content: Any, _ defaultContent : String?) {
+        guard let text = content as? String else {
+            return
+        }
+        textLabel.text = text
     }
     
 }

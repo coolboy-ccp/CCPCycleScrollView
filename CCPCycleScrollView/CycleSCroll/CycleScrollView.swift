@@ -35,12 +35,6 @@ final class CycleScrollView<T: UICollectionViewCell>: UIView, UICollectionViewDe
     private let cellReuseId = "cycleReuserId"
     private let minSections = 3
     
-    static func imageScroll() -> CycleScrollView {
-        let cs = CycleScrollView()
-        cs.cellClass = ImagesCell.self as! T.Type
-        return cs;
-    }
-    
     var currentP: Int = 1 {
         didSet {
             numsLabel.text = "\(currentP) / \(contentsArray!.count)"
@@ -111,7 +105,7 @@ final class CycleScrollView<T: UICollectionViewCell>: UIView, UICollectionViewDe
         RunLoop.current.add(timer!, forMode: .common)
     }
     
-    private func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return minSections
     }
     
@@ -142,5 +136,19 @@ final class CycleScrollView<T: UICollectionViewCell>: UIView, UICollectionViewDe
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         addTimer()
+    }
+}
+
+extension CycleScrollView {
+    public static var image: CycleScrollView {
+        let cs = CycleScrollView()
+        cs.cellClass = ImagesCell.self as! T.Type
+        return cs;
+    }
+    
+    public static var text: CycleScrollView {
+        let cs = CycleScrollView()
+        cs.cellClass = TextCell.self as! T.Type
+        return cs;
     }
 }

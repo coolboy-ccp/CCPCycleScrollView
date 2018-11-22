@@ -10,19 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var cycleViewBg: UIView!
-    private let scrView = CycleScrollView.imageScroll()
+    @IBOutlet weak var textViewBg: UIView!
+    private let imgScr = CycleScrollView.image
+    private let textScr = CycleScrollView.text
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setScrollView()
+        setImgScrollView()
+        setTextScrollView()
     }
     
-    private func setScrollView() {
-        cycleViewBg.addSubview(scrView)
-        scrView.frame = cycleViewBg.bounds
-//       / scrView.snp.makeConstraints { $0.top.bottom.left.right.equalTo(cycleViewBg) }
+    private func setImgScrollView() {
+        cycleViewBg.addSubview(imgScr)
+        imgScr.frame = cycleViewBg.bounds
         let imgNames = ["img1", "img2", "img3"]
-        scrView.scroll(contents: imgNames)
+        imgScr.scroll(contents: imgNames)
+    }
+    
+    private func setTextScrollView() {
+        textViewBg.addSubview(textScr)
+        textScr.frame = textViewBg.bounds
+        let texts = ["text-------01", "text-------02", "text-------03"]
+        textScr.scroll(contents: texts)
     }
 
 
