@@ -34,14 +34,15 @@ final class CycleScrollView<T: UICollectionViewCell>: UIView, UICollectionViewDe
     private var defaultContents: Array<String?>?
     private let cellReuseId = "cycleReuserId"
     private let minSections = 3
-    
-    var currentP: Int = 1 {
+    private var currentP: Int = 1 {
         didSet {
             numsLabel.text = "\(currentP) / \(contentsArray!.count)"
         }
     }
-    lazy var cellClass: T.Type = UICollectionViewCell.self as! T.Type
+    private lazy var cellClass: T.Type = UICollectionViewCell.self as! T.Type
     private let numsLabel = UILabel()
+    
+    var clickItemCallback: ((_ idx: Int, _ content: Any?)->())?
     
     func scroll(contents: Array<CycleDataAvailable>, defaultContents: Array<String?>? = nil) {
         self.defaultContents = defaultContents
@@ -121,6 +122,13 @@ final class CycleScrollView<T: UICollectionViewCell>: UIView, UICollectionViewDe
         }
         cell.setContent(contentsArray![indexPath.item], dc)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let content = contentsArray?[indexPath.item] {
+           let idx = indexPath.item
+           clickItemCallback?(idx, content)
+        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

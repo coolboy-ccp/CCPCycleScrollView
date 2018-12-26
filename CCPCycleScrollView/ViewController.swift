@@ -11,8 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var cycleViewBg: UIView!
     @IBOutlet weak var textViewBg: UIView!
-    private let imgScr = CycleScrollView.image
-    private let textScr = CycleScrollView.text
+    private let imgScr: CycleScrollView = .image
+    private let textScr: CycleScrollView = .text
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +25,9 @@ class ViewController: UIViewController {
         imgScr.frame = cycleViewBg.bounds
         let imgNames = ["img1", "img2", "img3"]
         imgScr.scroll(contents: imgNames)
+        imgScr.clickItemCallback = { (idx, content) in
+            print(idx, content)
+        }
     }
     
     private func setTextScrollView() {
@@ -32,6 +35,9 @@ class ViewController: UIViewController {
         textScr.frame = textViewBg.bounds
         let texts = ["text-------01", "text-------02", "text-------03"]
         textScr.scroll(contents: texts)
+        textScr.clickItemCallback = { (idx, content) in
+            print(idx, content)
+        }
     }
 
 
