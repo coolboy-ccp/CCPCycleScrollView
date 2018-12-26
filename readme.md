@@ -2,7 +2,7 @@ f# CCPCycleScrollView
 
  Platform | Build Status
  -------- | ------------
- iOS 9.0 later
+ ios | iOS 9.0 later
 
 ### How To Use
 
