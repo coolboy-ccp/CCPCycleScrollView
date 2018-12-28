@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     private func setTextScrollView() {
         textViewBg.addSubview(textScr)
         textScr.frame = textViewBg.bounds
-        let texts = ["text-------01", "text-------02", "text-------03"]
+        let texts = ["VideoClip-------01", "VideoClip-------02", "VideoClip-------03"]
         textScr.scroll(contents: texts)
         textScr.clickItemCallback = { (idx, content) in
             print(idx, content)

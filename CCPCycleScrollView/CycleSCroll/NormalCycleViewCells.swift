@@ -16,7 +16,7 @@ import Kingfisher
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(imgV)
-        imgV.contentMode = .center
+        imgV.contentMode = .scaleAspectFill
         contentView.backgroundColor = UIColor.white
         imgV.snp.makeConstraints { (make) in
             make.top.bottom.left.right.equalTo(self)
