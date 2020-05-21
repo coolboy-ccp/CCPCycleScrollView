@@ -25,6 +25,7 @@ extension UICollectionViewCell: CycleAvailable {
 final class CycleScrollView<T: UICollectionViewCell>: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
     private var collectionView: UICollectionView!
     private var pageControl: UIPageControl!
+    private var currentSection: Int = 0
     private var timer: Timer?
     private var contentsArray: Array<CycleDataAvailable>? {
         didSet {
@@ -121,6 +122,7 @@ final class CycleScrollView<T: UICollectionViewCell>: UIView, UICollectionViewDe
             dc = dcs[indexPath.item]
         }
         cell.setContent(contentsArray![indexPath.item], dc)
+        currentSection = indexPath.section
         return cell
     }
     
@@ -134,7 +136,11 @@ final class CycleScrollView<T: UICollectionViewCell>: UIView, UICollectionViewDe
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let page = Int((scrollView.contentOffset.x + (frame.width) * 0.5) / (frame.width))
         let currentPage = page % contentsArray!.count
-        currentP = currentPage + 1
+        if currentPage != currentP - 1 {
+            currentP = currentPage + 1
+            
+        }
+        
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
@@ -144,6 +150,15 @@ final class CycleScrollView<T: UICollectionViewCell>: UIView, UICollectionViewDe
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         addTimer()
+    }
+    
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if currentSection == 1 {
+            return
+        }
+        let middleIdP = IndexPath.init(item: currentP - 1, section: 1)
+        collectionView.scrollToItem(at: middleIdP, at: .left, animated: false)
     }
 }
 
